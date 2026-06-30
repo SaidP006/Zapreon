@@ -1,0 +1,2045 @@
+<!doctype html>
+<html lang="sw">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services - ZAPREON</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary: #0a2463;
+            --primary-light: #1e3a8a;
+            --secondary: #ff6b35;
+            --accent: #00d4aa;
+            --dark: #0a2463;
+            --light: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gradient-primary: linear-gradient(135deg, #0a2463 0%, #1e3a8a 50%, #00d4aa 100%);
+            --gradient-secondary: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,
+        body {
+            overflow-x: hidden !important;
+            width: 100%;
+            max-width: 100%;
+        }
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--gray-100);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-primary);
+            border-radius: 10px;
+        }
+
+        /* ===== PRELOADER ===== */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        #preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader-ring {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--secondary);
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ===== TOP BAR ===== */
+        .top-bar {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.75rem;
+            padding: 4px 0;
+            border-bottom: 2px solid var(--secondary);
+            position: relative;
+            z-index: 1031;
+        }
+        .top-bar a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .top-bar a:hover {
+            color: var(--secondary);
+        }
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .top-bar-left .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+        }
+        .top-bar-left .contact-item i {
+            width: 14px;
+            font-size: 0.75rem;
+        }
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+        .top-bar-right .top-social {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .top-bar .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .top-bar .social-icon:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        .top-bar .top-hours {
+            font-size: 0.75rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        .top-bar .top-hours i {
+            margin-right: 4px;
+        }
+        @media (max-width: 768px) {
+            .top-bar {
+                font-size: 0.6rem;
+                padding: 4px 0;
+            }
+            .top-bar-left {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2px;
+                line-height: 1.4;
+            }
+            .top-bar-left .contact-item {
+                font-size: 0.6rem;
+            }
+            .top-bar-left .contact-item i {
+                width: 12px;
+                font-size: 0.6rem;
+            }
+            .top-bar-right {
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 2px;
+                line-height: 1.4;
+            }
+            .top-bar .social-icon {
+                width: 20px;
+                height: 20px;
+                font-size: 0.5rem;
+            }
+            .top-bar .top-hours {
+                font-size: 0.6rem;
+            }
+            .top-bar-right .top-social {
+                gap: 4px;
+            }
+        }
+        @media (max-width: 576px) {
+            .top-bar {
+                font-size: 0.5rem;
+                padding: 3px 0;
+            }
+            .top-bar-left .contact-item {
+                font-size: 0.5rem;
+            }
+            .top-bar-left .contact-item i {
+                width: 10px;
+                font-size: 0.5rem;
+            }
+            .top-bar .social-icon {
+                width: 16px;
+                height: 16px;
+                font-size: 0.4rem;
+            }
+            .top-bar .top-hours {
+                font-size: 0.5rem;
+            }
+            .top-bar-right .top-social {
+                gap: 3px;
+            }
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            padding: 12px 0;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+            z-index: 1030;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+        }
+        .navbar .container {
+            max-width: 1200px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .navbar.fixed-top {
+            top: 40px;
+        }
+        @media (max-width: 768px) {
+            .navbar.fixed-top {
+                top: 36px;
+            }
+        }
+        @media (max-width: 576px) {
+            .navbar.fixed-top {
+                top: 28px;
+            }
+        }
+        .navbar.scrolled {
+            padding: 8px 0;
+            box-shadow: var(--shadow-md);
+            top: 0 !important;
+        }
+        .navbar-brand {
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: var(--primary) !important;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+        .navbar-brand .logo-img {
+            height: 44px;
+            width: auto;
+            transition: var(--transition);
+            border-radius: 6px;
+        }
+        .navbar-brand .logo-img:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+        .navbar-toggler {
+            border: none;
+            padding: 8px 10px;
+            margin-left: auto;
+        }
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        .navbar-collapse {
+            flex-grow: 0;
+        }
+        @media (min-width: 992px) {
+            .navbar-collapse {
+                display: flex !important;
+                flex-basis: auto;
+            }
+        }
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            margin-left: auto;
+        }
+        @media (max-width: 991.98px) {
+            .navbar-nav {
+                padding-top: 16px;
+                padding-bottom: 8px;
+                align-items: flex-start;
+                gap: 2px;
+                width: 100%;
+                margin-left: 0;
+            }
+            .navbar-nav .nav-item {
+                width: 100%;
+            }
+            .navbar-nav .nav-item .nav-link {
+                padding: 8px 16px !important;
+            }
+            .navbar-nav .nav-item .btn-primary-custom {
+                margin-top: 8px;
+                width: 100%;
+                justify-content: center;
+            }
+            .navbar-collapse {
+                flex-grow: 1;
+                width: 100%;
+            }
+        }
+        .nav-link {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark) !important;
+            padding: 8px 16px !important;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 10px;
+            transform: translateX(-50%);
+            transition: var(--transition);
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 60%;
+        }
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+            background: rgba(10, 36, 99, 0.04);
+        }
+        .dropdown-menu {
+            border: none;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            margin-top: 8px;
+            min-width: 220px;
+            animation: dropdownFade 0.3s ease;
+        }
+        @keyframes dropdownFade {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .dropdown-item {
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            color: var(--dark);
+        }
+        .dropdown-item:hover,
+        .dropdown-item.active {
+            background: var(--gradient-primary);
+            color: white !important;
+            transform: translateX(4px);
+        }
+        .dropdown-item i {
+            width: 20px;
+            margin-right: 8px;
+        }
+        .dropdown-divider {
+            margin: 8px 0;
+            border-color: var(--gray-200);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary-custom {
+            background: var(--gradient-secondary);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 16px rgba(255, 107, 53, 0.35);
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-primary-custom::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        .btn-primary-custom:hover::before {
+            transform: translateX(100%);
+        }
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(255, 107, 53, 0.45);
+            color: white;
+        }
+        .btn-outline-custom {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-outline-custom:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(10, 36, 99, 0.3);
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+        .section-sm {
+            padding: 60px 0;
+        }
+        .section-badge {
+            display: inline-block;
+            background: rgba(10, 36, 99, 0.06);
+            color: var(--primary);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            border: 1px solid rgba(10, 36, 99, 0.08);
+        }
+        .section-title {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--gray-500);
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            padding: 140px 0 60px;
+            position: relative;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8edf5 50%, #f5f7fa 100%);
+            border-bottom: 1px solid var(--gray-200);
+            overflow: hidden;
+        }
+        .page-header::before {
+            content: "";
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 60%;
+            height: 140%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(10, 36, 99, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .page-header::after {
+            content: "";
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at 30% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .page-header .header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: radial-gradient(circle at 20% 50%, var(--primary) 1px, transparent 1px),
+                radial-gradient(circle at 80% 50%, var(--secondary) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+        .page-header .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin-bottom: 16px;
+        }
+        .page-header .breadcrumb-item {
+            color: var(--gray-400);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+        .page-header .breadcrumb-item a {
+            color: var(--gray-500);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .page-header .breadcrumb-item a:hover {
+            color: var(--secondary);
+        }
+        .page-header .breadcrumb-item.active {
+            color: var(--secondary);
+        }
+        .page-header .breadcrumb-item+.breadcrumb-item::before {
+            color: var(--gray-300);
+            content: "/";
+            padding: 0 8px;
+        }
+        .page-header h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 8px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+        .page-header h1 span {
+            color: var(--secondary);
+            position: relative;
+        }
+        .page-header h1 span::after {
+            content: "";
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 107, 53, 0.15);
+            border-radius: 10px;
+            z-index: -1;
+        }
+        .page-header .header-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-500);
+            max-width: 550px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        .page-header .header-subtitle strong {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        .page-header .header-line {
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            border-radius: 10px;
+            margin-top: 4px;
+        }
+
+        /* ===== SERVICES OVERVIEW ===== */
+        .services-overview {
+            background: #ffffff;
+        }
+        .services-overview .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 992px) {
+            .services-overview .overview-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .services-overview .overview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-overview-card {
+            background: var(--gray-100);
+            padding: 32px 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-overview-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+        .service-overview-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-overview-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+            background: #ffffff;
+        }
+        .service-overview-card .icon {
+            width: 72px;
+            height: 72px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin: 0 auto 16px;
+            transition: var(--transition);
+        }
+        .service-overview-card:hover .icon {
+            transform: scale(1.08) rotate(-6deg);
+            background: var(--gradient-secondary);
+        }
+        .service-overview-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        .service-overview-card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .service-overview-card .learn-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+        .service-overview-card .learn-more:hover {
+            gap: 12px;
+            color: var(--primary);
+        }
+        .service-overview-card .learn-more i {
+            font-size: 0.75rem;
+        }
+
+        /* ===== SERVICE DETAILS ===== */
+        .service-details {
+            background: var(--gray-100);
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .service-detail-card {
+            background: white;
+            padding: 32px 28px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-detail-card::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+        .service-detail-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-detail-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--secondary);
+        }
+        .service-detail-card .icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 14px;
+            transition: var(--transition);
+        }
+        .service-detail-card:hover .icon {
+            background: var(--gradient-secondary);
+            transform: scale(1.05);
+        }
+        .service-detail-card h5 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        .service-detail-card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            margin-bottom: 0;
+            line-height: 1.7;
+        }
+        .service-detail-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0;
+        }
+        .service-detail-card ul li {
+            padding: 4px 0;
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .service-detail-card ul li i {
+            color: var(--secondary);
+            font-size: 0.7rem;
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-choose-section {
+            background: #ffffff;
+        }
+        .why-card {
+            background: var(--gray-100);
+            padding: 28px 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            height: 100%;
+            text-align: center;
+        }
+        .why-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--secondary);
+            background: #ffffff;
+        }
+        .why-card .icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            margin: 0 auto 14px;
+            transition: var(--transition);
+        }
+        .why-card:hover .icon {
+            transform: scale(1.08) rotate(-6deg);
+            background: var(--gradient-primary);
+        }
+        .why-card h5 {
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            color: var(--primary);
+        }
+        .why-card p {
+            font-size: 0.88rem;
+            color: var(--gray-500);
+            margin-bottom: 0;
+            line-height: 1.7;
+        }
+
+        /* ===== PORTFOLIO/GALLERY ===== */
+        .portfolio-gallery {
+            background: var(--gray-100);
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .portfolio-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            height: 280px;
+        }
+        .portfolio-item .portfolio-image {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .portfolio-item .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+        .portfolio-item .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10, 36, 99, 0.92), rgba(0, 212, 170, 0.85));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        .portfolio-item .portfolio-content {
+            transform: translateY(20px);
+            transition: var(--transition);
+            color: white;
+        }
+        .portfolio-item:hover .portfolio-content {
+            transform: translateY(0);
+        }
+        .portfolio-item .portfolio-tag {
+            display: inline-block;
+            background: rgba(255, 107, 53, 0.2);
+            color: var(--secondary);
+            padding: 3px 14px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+        }
+        .portfolio-item .portfolio-content h5 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            color: white;
+        }
+        .portfolio-item .portfolio-content p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 12px;
+        }
+        .portfolio-item .btn-portfolio {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .portfolio-item .btn-portfolio:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* ===== PROCESS SECTION ===== */
+        .process-section {
+            background: #ffffff;
+        }
+        .process-step {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .process-step .step-number {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--gray-200);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .process-step .step-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.6rem;
+            margin: 0 auto 12px;
+            transition: var(--transition);
+        }
+        .process-step:hover .step-icon {
+            transform: scale(1.08) rotate(-6deg);
+            background: var(--gradient-secondary);
+        }
+        .process-step h5 {
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+            color: var(--primary);
+        }
+        .process-step p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-bottom: 0;
+        }
+        .process-step .step-arrow {
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-300);
+            font-size: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .process-step .step-arrow {
+                display: none;
+            }
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-section {
+            background: var(--gray-100);
+            border-top: 1px solid var(--gray-200);
+        }
+        .testimonial-card {
+            background: white;
+            padding: 28px 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            height: 100%;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .testimonial-card .stars {
+            color: #fbbf24;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+        .testimonial-card .quote {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            font-style: italic;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .testimonial-card .client {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .testimonial-card .client img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gray-200);
+        }
+        .testimonial-card .client .name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+        .testimonial-card .client .role {
+            font-size: 0.8rem;
+            color: var(--gray-400);
+        }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        .cta-section .btn-light-custom {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .cta-section .btn-light-custom:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 80px 0 40px;
+            border-top: 2px solid var(--secondary);
+        }
+        .footer .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .footer .footer-logo img {
+            height: 45px;
+            width: auto;
+            border-radius: 6px;
+        }
+        .footer .footer-logo img:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+        .footer h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        .footer h5::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 10px;
+        }
+        .footer p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        .footer-links a {
+            display: block;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 6px 0;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        .footer-links a:hover {
+            color: white;
+            padding-left: 8px;
+        }
+        .footer .social-icons {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .footer .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            color: rgba(255, 255, 255, 0.6);
+            transition: var(--transition);
+        }
+        .footer .social-icons a:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-4px);
+        }
+        .footer .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 24px;
+            margin-top: 48px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .footer .copyright .brand-name {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 46px;
+            height: 46px;
+            background: var(--gradient-secondary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            cursor: pointer;
+        }
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .section {
+                padding: 50px 0;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .section-subtitle {
+                font-size: 0.95rem;
+                max-width: 100%;
+            }
+            .page-header {
+                padding: 110px 0 50px;
+            }
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            .page-header .header-subtitle {
+                font-size: 0.95rem;
+            }
+            .service-overview-card {
+                padding: 24px 18px;
+            }
+            .service-overview-card .icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+            }
+            .service-detail-card {
+                padding: 24px 18px;
+            }
+            .why-card {
+                padding: 20px 16px;
+            }
+            .portfolio-item {
+                height: 220px;
+            }
+            .footer {
+                padding: 50px 0 30px;
+            }
+        }
+        @media (max-width: 576px) {
+            .section {
+                padding: 35px 0;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .page-header {
+                padding: 90px 0 35px;
+            }
+            .page-header h1 {
+                font-size: 1.6rem;
+            }
+            .page-header .header-subtitle {
+                font-size: 0.85rem;
+            }
+            .service-overview-card {
+                padding: 20px 14px;
+            }
+            .service-overview-card .icon {
+                width: 52px;
+                height: 52px;
+                font-size: 1.3rem;
+            }
+            .service-overview-card h4 {
+                font-size: 1rem;
+            }
+            .service-overview-card p {
+                font-size: 0.82rem;
+            }
+            .service-detail-card {
+                padding: 18px 14px;
+            }
+            .service-detail-card h5 {
+                font-size: 0.95rem;
+            }
+            .service-detail-card p {
+                font-size: 0.82rem;
+            }
+            .service-detail-card ul li {
+                font-size: 0.8rem;
+            }
+            .why-card {
+                padding: 16px 12px;
+            }
+            .why-card h5 {
+                font-size: 0.9rem;
+            }
+            .why-card p {
+                font-size: 0.8rem;
+            }
+            .portfolio-item {
+                height: 200px;
+            }
+            .portfolio-item .portfolio-content h5 {
+                font-size: 0.95rem;
+            }
+            .portfolio-item .portfolio-content p {
+                font-size: 0.78rem;
+            }
+            .testimonial-card {
+                padding: 18px 14px;
+            }
+            .testimonial-card .quote {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== PRELOADER ===== -->
+    <div id="preloader">
+        <div class="loader-ring"></div>
+    </div>
+
+    <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center g-0">
+                <div class="col-6 col-md-6">
+                    <div class="top-bar-left">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@zapreon.com">info@zapreon.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+255753214045">0753 214 045</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6">
+                    <div class="top-bar-right">
+                        <div class="top-social">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <div class="top-hours">
+                            <i class="far fa-clock"></i>
+                            <span class="highlight-text">9AM - 6PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo/zapreon_logo.png" alt="ZAPREON Logo" class="logo-img" />
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item active" href="services.html"><i class="fas fa-th-large"></i> Overview</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="digital-printing.html"><i class="fas fa-print"></i> Digital Printing</a></li>
+                            <li><a class="dropdown-item" href="graphic-design.html"><i class="fas fa-palette"></i> Graphic Design</a></li>
+                            <li><a class="dropdown-item" href="multimedia.html"><i class="fas fa-video"></i> Multimedia Advertising</a></li>
+                            <li><a class="dropdown-item" href="digital-marketing.html"><i class="fas fa-chart-line"></i> Digital Marketing</a></li>
+                            <li><a class="dropdown-item" href="web-development.html"><i class="fas fa-code"></i> Web Development</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Portfolio
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="portfolioDropdown">
+                            <li><a class="dropdown-item" href="portfolio.html"><i class="fas fa-th-large"></i> Overview</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="printing-portfolio.html"><i class="fas fa-print"></i> Printing Projects</a></li>
+                            <li><a class="dropdown-item" href="design-portfolio.html"><i class="fas fa-paint-brush"></i> Design Projects</a></li>
+                            <li><a class="dropdown-item" href="multimedia-portfolio.html"><i class="fas fa-film"></i> Multimedia Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Blog
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="blogDropdown">
+                            <li><a class="dropdown-item" href="blog.html"><i class="fas fa-th-large"></i> Overview</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="blog-design.html"><i class="fas fa-pencil-ruler"></i> Design Tips</a></li>
+                            <li><a class="dropdown-item" href="blog-marketing.html"><i class="fas fa-bullhorn"></i> Marketing Strategies</a></li>
+                            <li><a class="dropdown-item" href="blog-industry.html"><i class="fas fa-newspaper"></i> Industry News</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary-custom" href="quote.html">
+                            <i class="fas fa-rocket me-2"></i> Get Quote
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+        <div class="header-pattern"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Our Services</li>
+                        </ol>
+                    </nav>
+                    <h1>Our <span>Services</span></h1>
+                    <p class="header-subtitle">
+                        Comprehensive digital solutions to help your business <strong>grow, stand out, and succeed</strong>
+                        in today's competitive market.
+                    </p>
+                    <div class="header-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES OVERVIEW ===== -->
+    <section class="section services-overview">
+        <div class="container">
+            <div class="text-center mb-4" data-aos="fade-up">
+                <span class="section-badge">What We Offer</span>
+                <h2 class="section-title">Your Vision, Our <span style="color: var(--secondary);">Expertise</span></h2>
+                <p class="section-subtitle mx-auto">
+                    We provide end-to-end creative solutions that bring your ideas to life and help your brand thrive
+                </p>
+            </div>
+
+            <div class="overview-grid" data-aos="fade-up">
+                <!-- Service 1 -->
+                <div class="service-overview-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h4>Digital Printing</h4>
+                    <p>High-quality printing with modern equipment and premium materials for stunning results.</p>
+                    <a href="digital-printing.html" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-overview-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h4>Graphic Design</h4>
+                    <p>Creative design solutions that make your brand stand out and leave a lasting impression.</p>
+                    <a href="graphic-design.html" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-overview-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h4>Multimedia Advertising</h4>
+                    <p>Engaging multimedia content to captivate your audience and boost brand awareness.</p>
+                    <a href="multimedia.html" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-overview-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Digital Marketing</h4>
+                    <p>Strategic marketing to grow your online presence, reach your target audience, and drive sales.</p>
+                    <a href="digital-marketing.html" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICE DETAILS ===== -->
+    <section class="section service-details">
+        <div class="container">
+            <div class="text-center mb-4" data-aos="fade-up">
+                <span class="section-badge">Why Choose Us</span>
+                <h2 class="section-title">What Makes Us <span style="color: var(--secondary);">Different</span></h2>
+                <p class="section-subtitle mx-auto">
+                    We combine creativity, technology, and strategy to deliver exceptional results that drive business growth
+                </p>
+            </div>
+
+            <div class="row g-4" data-aos="fade-up">
+                <!-- Detail 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-detail-card">
+                        <div class="icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h5>Creative Excellence</h5>
+                        <p>Our team develops unique concepts that capture attention and communicate your message effectively.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Innovative designs</li>
+                            <li><i class="fas fa-check-circle"></i> Brand storytelling</li>
+                            <li><i class="fas fa-check-circle"></i> Visual identity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Detail 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-detail-card">
+                        <div class="icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h5>Comprehensive Solutions</h5>
+                        <p>From branding to printing and digital marketing, we provide everything under one roof.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> End-to-end services</li>
+                            <li><i class="fas fa-check-circle"></i> Consistent branding</li>
+                            <li><i class="fas fa-check-circle"></i> Seamless integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Detail 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-detail-card">
+                        <div class="icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h5>Quality Assurance</h5>
+                        <p>We use modern equipment and premium materials to produce work that meets professional standards.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Premium materials</li>
+                            <li><i class="fas fa-check-circle"></i> Industry standards</li>
+                            <li><i class="fas fa-check-circle"></i> Quality control</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Detail 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-detail-card">
+                        <div class="icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5>Timely Delivery</h5>
+                        <p>We understand deadlines and deliver projects on schedule without compromising quality.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> On-time delivery</li>
+                            <li><i class="fas fa-check-circle"></i> Reliable service</li>
+                            <li><i class="fas fa-check-circle"></i> Project management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY CHOOSE US ===== -->
+    <section class="section why-choose-section">
+        <div class="container">
+            <div class="text-center mb-4" data-aos="fade-up">
+                <span class="section-badge">Benefits</span>
+                <h2 class="section-title">Why Work With <span style="color: var(--secondary);">Us</span></h2>
+                <p class="section-subtitle mx-auto">
+                    Partner with us and experience the difference of working with a dedicated creative team
+                </p>
+            </div>
+
+            <div class="row g-4" data-aos="fade-up">
+                <div class="col-md-4">
+                    <div class="why-card">
+                        <div class="icon"><i class="fas fa-rocket"></i></div>
+                        <h5>Innovative Approach</h5>
+                        <p>We stay ahead of trends and use cutting-edge techniques to deliver fresh, creative solutions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-card">
+                        <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h5>Client-Focused</h5>
+                        <p>Your success is our priority. We listen, understand, and tailor solutions to meet your unique needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-card">
+                        <div class="icon"><i class="fas fa-medal"></i></div>
+                        <h5>Results-Driven</h5>
+                        <p>We focus on delivering measurable results that help your business grow and achieve its goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO/GALLERY ===== -->
+    <section class="section portfolio-gallery">
+        <div class="container">
+            <div class="text-center mb-4" data-aos="fade-up">
+                <span class="section-badge">Our Work</span>
+                <h2 class="section-title">Recent <span style="color: var(--secondary);">Projects</span></h2>
+                <p class="section-subtitle mx-auto">
+                    Take a look at some of our recent work and see the quality we deliver
+                </p>
+            </div>
+
+            <div class="row g-4" data-aos="fade-up">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Business Cards" />
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <span class="portfolio-tag">Printing</span>
+                                    <h5>Premium Business Cards</h5>
+                                    <p>High-quality business cards for corporate clients</p>
+                                    <a href="#" class="btn-portfolio">
+                                        <i class="fas fa-eye"></i> View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Branding" />
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <span class="portfolio-tag">Design</span>
+                                    <h5>Corporate Branding</h5>
+                                    <p>Complete brand identity development for a tech company</p>
+                                    <a href="#" class="btn-portfolio">
+                                        <i class="fas fa-eye"></i> View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Advertising" />
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <span class="portfolio-tag">Multimedia</span>
+                                    <h5>Advertising Campaign</h5>
+                                    <p>Multimedia advertising for a retail brand</p>
+                                    <a href="#" class="btn-portfolio">
+                                        <i class="fas fa-eye"></i> View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Digital Marketing" />
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <span class="portfolio-tag">Marketing</span>
+                                    <h5>Digital Marketing Campaign</h5>
+                                    <p>Social media strategy and content creation</p>
+                                    <a href="#" class="btn-portfolio">
+                                        <i class="fas fa-eye"></i> View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Banners" />
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <span class="portfolio-tag">Printing</span>
+                                    <h5>Large Format Banners</h5>
+                                    <p>High-quality banners for events and promotions</p>
+                                    <a href="#" class="btn-portfolio">
+                                        <i class="fas fa-eye"></i> View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Logo Design" />
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-content">
+                                    <span class="portfolio-tag">Design</span>
+                                    <h5>Logo Design</h5>
+                                    <p>Modern and creative logo designs for startups</p>
+                                    <a href="#" class="btn-portfolio">
+                                        <i class="fas fa-eye"></i> View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4" data-aos="fade-up">
+                <a href="portfolio.html" class="btn btn-primary-custom">
+                    <i class="fas fa-th-large me-2"></i>
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESS SECTION ===== -->
+    <section class="section process-section">
+        <div class="container">
+            <div class="text-center mb-4" data-aos="fade-up">
+                <span class="section-badge">How We Work</span>
+                <h2 class="section-title">Our <span style="color: var(--secondary);">Process</span></h2>
+                <p class="section-subtitle mx-auto">
+                    A simple and transparent process to bring your project to life from start to finish
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center" data-aos="fade-up">
+                <!-- Step 1 -->
+                <div class="col-md-3 col-6">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h5>Consultation</h5>
+                        <p>We listen to your needs, goals, and vision</p>
+                        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-md-3 col-6">
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-icon">
+                            <i class="fas fa-pencil-ruler"></i>
+                        </div>
+                        <h5>Design &amp; Plan</h5>
+                        <p>We create concepts and develop strategies</p>
+                        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-md-3 col-6">
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h5>Develop &amp; Execute</h5>
+                        <p>We bring your project to life with precision</p>
+                        <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="col-md-3 col-6">
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h5>Deliver &amp; Support</h5>
+                        <p>We deliver and provide ongoing support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="text-center mb-4" data-aos="fade-up">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">What Our <span style="color: var(--secondary);">Clients Say</span></h2>
+                <p class="section-subtitle mx-auto">
+                    Real feedback from businesses we've helped grow and succeed
+                </p>
+            </div>
+
+            <div class="row g-4" data-aos="fade-up">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="quote">
+                            "ZAPREON transformed our brand identity with their exceptional design skills. Our sales increased by 40% after the rebranding."
+                        </p>
+                        <div class="client">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" />
+                            <div>
+                                <div class="name">Ahmed S.</div>
+                                <div class="role">CEO, Zanzibar Tech</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="quote">
+                            "The digital marketing campaign by ZAPREON significantly increased our online visibility. We saw a 200% increase in website traffic."
+                        </p>
+                        <div class="client">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" />
+                            <div>
+                                <div class="name">Fatma M.</div>
+                                <div class="role">Marketing Director</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="quote">
+                            "From business cards to large format prints, ZAPREON delivers exceptional quality every time. Highly recommended!"
+                        </p>
+                        <div class="client">
+                            <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Client" />
+                            <div>
+                                <div class="name">Juma K.</div>
+                                <div class="role">Business Owner</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section-sm cta-section">
+        <div class="container">
+            <div class="row align-items-center g-3 g-md-4" data-aos="fade-up">
+                <div class="col-lg-8">
+                    <h3 class="mb-2">Ready to Get Started?</h3>
+                    <p class="mb-0 opacity-75">
+                        Let's bring your ideas to life. Get a free quote and consultation today.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="quote.html" class="btn btn-light-custom">
+                        <i class="fas fa-file-invoice me-2"></i>
+                        Get a Free Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-3 g-md-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-logo">
+                        <img src="logo/zapreon_logo.png" alt="ZAPREON Logo" />
+                    </div>
+                    <p>
+                        Delivering the future of digital convergence to businesses in
+                        Zanzibar. From design, print and multimedia advertising with
+                        digital marketing experts.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="services.html">Services</a>
+                        <a href="portfolio.html">Portfolio</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Our Services</h5>
+                    <div class="footer-links">
+                        <a href="digital-printing.html">Digital Printing</a>
+                        <a href="graphic-design.html">Graphic Design</a>
+                        <a href="multimedia.html">Multimedia Advertising</a>
+                        <a href="digital-marketing.html">Digital Marketing</a>
+                        <a href="web-development.html">Web Development</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Info</h5>
+                    <div class="footer-links">
+                        <p><i class="fas fa-map-marker-alt me-2" style="color: var(--secondary);"></i> Kiembe Samaki, Zanzibar</p>
+                        <p><i class="fas fa-phone me-2" style="color: var(--secondary);"></i> 0753 214 045</p>
+                        <p><i class="fas fa-envelope me-2" style="color: var(--secondary);"></i> info@zapreon.com</p>
+                        <p><i class="fas fa-clock me-2" style="color: var(--secondary);"></i> Mon - Sat: 9AM - 6PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p class="mb-0">
+                    &copy; 2023 <span class="brand-name">ZAPREON</span>. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // ===== PRELOADER =====
+        window.addEventListener("load", function() {
+            document.getElementById("preloader").classList.add("hide");
+        });
+
+        // ===== AOS INIT =====
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 600,
+            easing: "ease-out-cubic",
+        });
+
+        // ===== NAVBAR SCROLL =====
+        window.addEventListener("scroll", function() {
+            const navbar = document.querySelector(".navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+
+            const btn = document.getElementById("backToTop");
+            if (window.scrollY > 400) {
+                btn.classList.add("active");
+            } else {
+                btn.classList.remove("active");
+            }
+        });
+
+        // ===== BACK TO TOP =====
+        document.getElementById("backToTop").addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+
+</html>

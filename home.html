@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="sw">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZAPREON - Digital Printing & Visual Communication | Zanzibar</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap"
+        rel="stylesheet" />
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    
+
     <style>
         /* ===== ROOT VARIABLES - ZAPREON BRAND COLORS ===== */
         :root {
@@ -31,7 +34,7 @@
             --gradient-accent: linear-gradient(135deg, #00D4AA 0%, #66E8D0 100%);
             --gradient-mixed: linear-gradient(135deg, #1E3A8A 0%, #FF6B35 50%, #00D4AA 100%);
             --gradient-gold: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
-            --gradient-card: linear-gradient(135deg, rgba(30,58,138,0.95) 0%, rgba(0,212,170,0.15) 100%);
+            --gradient-card: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(0, 212, 170, 0.15) 100%);
             --dark: #0F1F4A;
             --light: #F8FAFC;
             --gray-100: #F1F5F9;
@@ -39,10 +42,10 @@
             --gray-300: #CBD5E1;
             --gray-400: #94A3B8;
             --gray-500: #64748B;
-            --shadow-sm: 0 4px 20px rgba(0,0,0,0.06);
-            --shadow-md: 0 8px 40px rgba(0,0,0,0.10);
-            --shadow-lg: 0 20px 80px rgba(0,0,0,0.15);
-            --shadow-xl: 0 30px 100px rgba(0,0,0,0.20);
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.10);
+            --shadow-lg: 0 20px 80px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 30px 100px rgba(0, 0, 0, 0.20);
             --radius-sm: 12px;
             --radius-md: 20px;
             --radius-lg: 30px;
@@ -51,7 +54,12 @@
         }
 
         /* ===== RESET ===== */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background: var(--light);
@@ -59,18 +67,38 @@
             overflow-x: hidden;
             line-height: 1.7;
         }
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Playfair Display', serif;
             font-weight: 800;
             letter-spacing: -0.02em;
         }
-        a { text-decoration: none; color: inherit; }
-        img { max-width: 100%; height: auto; }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
         /* ===== SCROLLBAR ===== */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--gray-100); }
-        ::-webkit-scrollbar-thumb { 
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray-100);
+        }
+
+        ::-webkit-scrollbar-thumb {
             background: var(--gradient-mixed);
             border-radius: 10px;
         }
@@ -86,12 +114,18 @@
             z-index: 99999;
             transition: opacity 0.8s ease, visibility 0.8s ease;
         }
-        #preloader.hide { opacity: 0; visibility: hidden; }
+
+        #preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
         .loader {
             display: flex;
             gap: 12px;
             align-items: center;
         }
+
         .loader span {
             display: block;
             width: 16px;
@@ -99,28 +133,64 @@
             border-radius: 50%;
             animation: loaderBounce 1.2s ease-in-out infinite;
         }
-        .loader span:nth-child(1) { background: var(--secondary); animation-delay: 0s; }
-        .loader span:nth-child(2) { background: var(--primary-light); animation-delay: 0.15s; }
-        .loader span:nth-child(3) { background: var(--accent); animation-delay: 0.3s; }
-        .loader span:nth-child(4) { background: var(--gold); animation-delay: 0.45s; }
-        .loader span:nth-child(5) { background: var(--secondary); animation-delay: 0.6s; }
+
+        .loader span:nth-child(1) {
+            background: var(--secondary);
+            animation-delay: 0s;
+        }
+
+        .loader span:nth-child(2) {
+            background: var(--primary-light);
+            animation-delay: 0.15s;
+        }
+
+        .loader span:nth-child(3) {
+            background: var(--accent);
+            animation-delay: 0.3s;
+        }
+
+        .loader span:nth-child(4) {
+            background: var(--gold);
+            animation-delay: 0.45s;
+        }
+
+        .loader span:nth-child(5) {
+            background: var(--secondary);
+            animation-delay: 0.6s;
+        }
+
         @keyframes loaderBounce {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-20px) scale(1.2); }
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-20px) scale(1.2);
+            }
         }
 
         /* ===== TOP BAR - JUU KABISA ===== */
         .top-bar {
             background: var(--primary-dark);
-            color: rgba(255,255,255,0.75);
+            color: rgba(255, 255, 255, 0.75);
             font-size: 0.8rem;
             padding: 6px 0;
             border-bottom: 2px solid var(--secondary);
             position: relative;
             z-index: 1031;
         }
-        .top-bar a { color: rgba(255,255,255,0.75); transition: var(--transition); }
-        .top-bar a:hover { color: var(--secondary); }
+
+        .top-bar a {
+            color: rgba(255, 255, 255, 0.75);
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: var(--secondary);
+        }
+
         .top-bar .social-icon {
             display: inline-flex;
             align-items: center;
@@ -128,32 +198,48 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             transition: var(--transition);
             font-size: 0.7rem;
         }
+
         .top-bar .social-icon:hover {
             background: var(--secondary);
             color: var(--dark);
             transform: translateY(-2px);
         }
-        .top-bar .divider { color: rgba(255,255,255,0.15); margin: 0 12px; }
-        .top-bar .highlight-text { color: var(--secondary); font-weight: 700; }
-        .top-bar .accent-text { color: var(--accent); }
-        .top-bar .gold-text { color: var(--gold); }
+
+        .top-bar .divider {
+            color: rgba(255, 255, 255, 0.15);
+            margin: 0 12px;
+        }
+
+        .top-bar .highlight-text {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .top-bar .accent-text {
+            color: var(--accent);
+        }
+
+        .top-bar .gold-text {
+            color: var(--gold);
+        }
 
         /* ===== NAVBAR ===== */
         .navbar {
             padding: 10px 0;
-            background: rgba(255,255,255,0.96);
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
-            border-bottom: 2px solid rgba(0,212,170,0.15);
+            border-bottom: 2px solid rgba(0, 212, 170, 0.15);
             transition: var(--transition);
             z-index: 1030;
             position: sticky;
             top: 0;
         }
+
         .navbar.scrolled {
             padding: 6px 0;
             box-shadow: var(--shadow-md);
@@ -168,21 +254,25 @@
             align-items: center;
             gap: 12px;
         }
+
         .navbar-brand .logo-img {
             height: 45px;
             width: auto;
             transition: var(--transition);
             border-radius: 6px;
         }
+
         .navbar-brand .logo-img:hover {
             transform: scale(1.05) rotate(-2deg);
         }
+
         .navbar-brand .brand-text {
             background: var(--gradient-mixed);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 900;
         }
+
         .navbar-brand .brand-dot {
             color: var(--secondary);
             -webkit-text-fill-color: var(--secondary);
@@ -197,6 +287,7 @@
             transition: var(--transition);
             position: relative;
         }
+
         .nav-link::before {
             content: '';
             position: absolute;
@@ -209,11 +300,15 @@
             transform: translateX(-50%);
             transition: var(--transition);
         }
+
         .nav-link:hover::before,
-        .nav-link.active::before { width: 40%; }
+        .nav-link.active::before {
+            width: 40%;
+        }
+
         .nav-link:hover,
         .nav-link.active {
-            background: rgba(255,107,53,0.08);
+            background: rgba(255, 107, 53, 0.08);
             color: var(--secondary) !important;
         }
 
@@ -222,16 +317,25 @@
             border-radius: var(--radius-md);
             box-shadow: var(--shadow-lg);
             padding: 12px;
-            background: rgba(255,255,255,0.98);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
             margin-top: 8px;
             min-width: 220px;
             animation: dropdownFade 0.3s ease;
         }
+
         @keyframes dropdownFade {
-            from { opacity: 0; transform: translateY(-10px) scale(0.96); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+            from {
+                opacity: 0;
+                transform: translateY(-10px) scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
+
         .dropdown-item {
             padding: 10px 16px;
             border-radius: var(--radius-sm);
@@ -240,14 +344,23 @@
             transition: var(--transition);
             color: var(--dark);
         }
+
         .dropdown-item:hover,
         .dropdown-item.active {
             background: var(--gradient-mixed);
             color: white !important;
             transform: translateX(4px);
         }
-        .dropdown-item i { width: 20px; margin-right: 8px; }
-        .dropdown-divider { margin: 8px 0; border-color: var(--gray-200); }
+
+        .dropdown-item i {
+            width: 20px;
+            margin-right: 8px;
+        }
+
+        .dropdown-divider {
+            margin: 8px 0;
+            border-color: var(--gray-200);
+        }
 
         .btn-primary-custom {
             background: var(--gradient-mixed);
@@ -258,22 +371,27 @@
             font-weight: 700;
             font-size: 0.9rem;
             transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(255,107,53,0.35);
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.35);
             position: relative;
             overflow: hidden;
         }
+
         .btn-primary-custom::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transform: translateX(-100%);
             transition: transform 0.6s ease;
         }
-        .btn-primary-custom:hover::before { transform: translateX(100%); }
+
+        .btn-primary-custom:hover::before {
+            transform: translateX(100%);
+        }
+
         .btn-primary-custom:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 32px rgba(255,107,53,0.45);
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.45);
             color: white;
         }
 
@@ -286,6 +404,7 @@
             font-weight: 600;
             transition: var(--transition);
         }
+
         .btn-outline-custom:hover {
             background: var(--primary);
             color: white;
@@ -303,6 +422,7 @@
             padding: 80px 0 80px;
             overflow: hidden;
         }
+
         .hero::before {
             content: '';
             position: absolute;
@@ -315,6 +435,7 @@
             opacity: 0.06;
             pointer-events: none;
         }
+
         .hero::after {
             content: '';
             position: absolute;
@@ -336,36 +457,53 @@
             pointer-events: none;
             animation: orbFloat 20s ease-in-out infinite;
         }
+
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: rgba(255,107,53,0.10);
+            background: rgba(255, 107, 53, 0.10);
             top: -10%;
             right: -5%;
             animation-delay: 0s;
         }
+
         .orb-2 {
             width: 300px;
             height: 300px;
-            background: rgba(0,212,170,0.08);
+            background: rgba(0, 212, 170, 0.08);
             bottom: -5%;
             left: -5%;
             animation-delay: -5s;
         }
+
         .orb-3 {
             width: 200px;
             height: 200px;
-            background: rgba(30,58,138,0.06);
+            background: rgba(30, 58, 138, 0.06);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             animation-delay: -10s;
         }
+
         @keyframes orbFloat {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(30px, -40px) scale(1.1); }
-            50% { transform: translate(-20px, 20px) scale(0.9); }
-            75% { transform: translate(40px, 30px) scale(1.05); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(30px, -40px) scale(1.1);
+            }
+
+            50% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            75% {
+                transform: translate(40px, 30px) scale(1.05);
+            }
         }
 
         .hero-content {
@@ -377,16 +515,17 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: rgba(255,107,53,0.10);
+            background: rgba(255, 107, 53, 0.10);
             color: var(--secondary);
             padding: 8px 20px;
             border-radius: 50px;
             font-weight: 600;
             font-size: 0.8rem;
             margin-bottom: 20px;
-            border: 1px solid rgba(255,107,53,0.15);
+            border: 1px solid rgba(255, 107, 53, 0.15);
             backdrop-filter: blur(10px);
         }
+
         .hero-badge .pulse-dot {
             width: 8px;
             height: 8px;
@@ -394,9 +533,19 @@
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
+
         @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.5); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.5);
+            }
         }
 
         .hero-title {
@@ -405,17 +554,20 @@
             line-height: 1.05;
             margin-bottom: 20px;
         }
+
         .hero-title .highlight-blue {
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .hero-title .highlight-orange {
             background: var(--gradient-secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
         }
+
         .hero-title .highlight-orange::after {
             content: '';
             position: absolute;
@@ -423,10 +575,11 @@
             left: 0;
             width: 100%;
             height: 12px;
-            background: rgba(255,107,53,0.12);
+            background: rgba(255, 107, 53, 0.12);
             border-radius: 10px;
             z-index: -1;
         }
+
         .hero-title .highlight-gold {
             background: var(--gradient-gold);
             -webkit-background-clip: text;
@@ -440,6 +593,7 @@
             margin-bottom: 32px;
             line-height: 1.8;
         }
+
         .hero-subtitle .highlight {
             color: var(--secondary);
             font-weight: 600;
@@ -450,9 +604,11 @@
             gap: 40px;
             margin-top: 40px;
         }
+
         .hero-stat {
             text-align: left;
         }
+
         .hero-stat-number {
             font-family: 'Playfair Display', serif;
             font-size: 2.2rem;
@@ -461,6 +617,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .hero-stat-label {
             font-size: 0.8rem;
             color: var(--gray-400);
@@ -477,19 +634,20 @@
         }
 
         .float-card {
-            background: rgba(255,255,255,0.88);
+            background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-radius: var(--radius-md);
             padding: 24px 28px;
             box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
             animation: floatCard 6s ease-in-out infinite;
             cursor: default;
         }
+
         .float-card::before {
             content: '';
             position: absolute;
@@ -502,23 +660,43 @@
             transform-origin: left;
             transition: var(--transition);
         }
+
         .float-card:hover::before {
             transform: scaleX(1);
         }
+
         .float-card:hover {
             transform: translateY(-8px) rotateX(4deg) rotateY(-4deg);
             box-shadow: var(--shadow-xl);
             border-color: var(--secondary);
         }
 
-        .float-card:nth-child(1) { animation-delay: 0s; }
-        .float-card:nth-child(2) { animation-delay: 1.2s; }
-        .float-card:nth-child(3) { animation-delay: 2.4s; }
-        .float-card:nth-child(4) { animation-delay: 3.6s; }
+        .float-card:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .float-card:nth-child(2) {
+            animation-delay: 1.2s;
+        }
+
+        .float-card:nth-child(3) {
+            animation-delay: 2.4s;
+        }
+
+        .float-card:nth-child(4) {
+            animation-delay: 3.6s;
+        }
 
         @keyframes floatCard {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(1deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(1deg);
+            }
         }
 
         .float-card .card-icon {
@@ -532,13 +710,15 @@
             color: white;
             font-size: 1.4rem;
             margin-bottom: 14px;
-            box-shadow: 0 4px 16px rgba(255,107,53,0.25);
+            box-shadow: 0 4px 16px rgba(255, 107, 53, 0.25);
             transition: var(--transition);
         }
+
         .float-card:hover .card-icon {
             transform: rotate(-8deg) scale(1.05);
-            box-shadow: 0 8px 24px rgba(255,107,53,0.35);
+            box-shadow: 0 8px 24px rgba(255, 107, 53, 0.35);
         }
+
         .float-card h5 {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 700;
@@ -546,11 +726,13 @@
             margin-bottom: 4px;
             color: var(--primary);
         }
+
         .float-card p {
             font-size: 0.85rem;
             color: var(--gray-500);
             margin-bottom: 0;
         }
+
         .float-card .arrow-link {
             color: var(--secondary);
             font-weight: 600;
@@ -561,6 +743,7 @@
             gap: 6px;
             margin-top: 10px;
         }
+
         .float-card .arrow-link:hover {
             gap: 12px;
             color: var(--primary);
@@ -571,11 +754,14 @@
             padding: 100px 0;
             position: relative;
         }
-        .section-sm { padding: 60px 0; }
+
+        .section-sm {
+            padding: 60px 0;
+        }
 
         .section-badge {
             display: inline-block;
-            background: rgba(255,107,53,0.10);
+            background: rgba(255, 107, 53, 0.10);
             color: var(--secondary);
             padding: 6px 20px;
             border-radius: 50px;
@@ -584,17 +770,19 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             margin-bottom: 12px;
-            border: 1px solid rgba(255,107,53,0.15);
+            border: 1px solid rgba(255, 107, 53, 0.15);
         }
+
         .section-badge-accent {
-            background: rgba(0,212,170,0.10);
+            background: rgba(0, 212, 170, 0.10);
             color: var(--accent);
-            border-color: rgba(0,212,170,0.15);
+            border-color: rgba(0, 212, 170, 0.15);
         }
+
         .section-badge-gold {
-            background: rgba(245,158,11,0.10);
+            background: rgba(245, 158, 11, 0.10);
             color: var(--gold);
-            border-color: rgba(245,158,11,0.15);
+            border-color: rgba(245, 158, 11, 0.15);
         }
 
         .section-title {
@@ -603,21 +791,25 @@
             margin-bottom: 16px;
             line-height: 1.1;
         }
+
         .section-title .highlight {
             background: var(--gradient-secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .section-title .highlight-gold {
             background: var(--gradient-gold);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .section-title .highlight-blue {
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .section-subtitle {
             font-size: 1.1rem;
             color: var(--gray-500);
@@ -628,17 +820,21 @@
         .about-section {
             background: white;
         }
+
         .about-image-wrapper {
             position: relative;
         }
+
         .about-image-wrapper .main-img {
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-lg);
             transition: var(--transition);
         }
+
         .about-image-wrapper .main-img:hover {
             transform: scale(1.02) rotate(-1deg);
         }
+
         .about-badge {
             position: absolute;
             bottom: -20px;
@@ -650,6 +846,7 @@
             text-align: center;
             border: 2px solid var(--secondary);
         }
+
         .about-badge h3 {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 2.4rem;
@@ -659,6 +856,7 @@
             -webkit-text-fill-color: transparent;
             margin-bottom: 0;
         }
+
         .about-badge p {
             font-size: 0.8rem;
             color: var(--gray-500);
@@ -674,12 +872,14 @@
             transition: var(--transition);
             border: 1px solid transparent;
         }
+
         .about-feature:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-md);
             border-color: var(--secondary);
             background: white;
         }
+
         .about-feature .icon {
             width: 48px;
             height: 48px;
@@ -697,6 +897,7 @@
         .services-section {
             background: var(--gray-100);
         }
+
         .service-card {
             background: white;
             padding: 40px 32px;
@@ -704,10 +905,11 @@
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
             height: 100%;
-            border: 1px solid rgba(0,0,0,0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
             position: relative;
             overflow: hidden;
         }
+
         .service-card::before {
             content: '';
             position: absolute;
@@ -720,16 +922,21 @@
             transform-origin: left;
             transition: var(--transition);
         }
-        .service-card:hover::before { transform: scaleX(1); }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
             border-color: var(--secondary);
         }
+
         .service-card .icon {
             width: 60px;
             height: 60px;
-            background: rgba(255,107,53,0.08);
+            background: rgba(255, 107, 53, 0.08);
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
@@ -739,27 +946,32 @@
             margin-bottom: 20px;
             transition: var(--transition);
         }
+
         .service-card:hover .icon {
             background: var(--gradient-mixed);
             color: white;
             transform: rotate(-8deg) scale(1.05);
         }
+
         .service-card h4 {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 700;
             font-size: 1.3rem;
             margin-bottom: 12px;
         }
+
         .service-card p {
             color: var(--gray-500);
             font-size: 0.95rem;
             margin-bottom: 16px;
         }
+
         .service-card .service-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+
         .service-card .service-list li {
             padding: 5px 0;
             font-size: 0.9rem;
@@ -768,6 +980,7 @@
             align-items: center;
             gap: 10px;
         }
+
         .service-card .service-list li i {
             color: var(--secondary);
             font-size: 0.8rem;
@@ -778,50 +991,59 @@
             background: var(--dark);
             color: white;
         }
+
         .testimonials-section .section-subtitle {
             color: var(--gray-400);
         }
+
         .testimonial-card {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             padding: 32px;
             border-radius: var(--radius-md);
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             transition: var(--transition);
             height: 100%;
         }
+
         .testimonial-card:hover {
             transform: translateY(-4px);
-            background: rgba(255,255,255,0.08);
-            border-color: rgba(255,107,53,0.2);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 107, 53, 0.2);
         }
+
         .testimonial-card .stars {
             color: var(--gold);
             margin-bottom: 16px;
             letter-spacing: 2px;
         }
+
         .testimonial-card .quote {
             font-size: 1rem;
             font-style: italic;
             opacity: 0.85;
             margin-bottom: 20px;
         }
+
         .testimonial-card .client {
             display: flex;
             align-items: center;
             gap: 16px;
         }
+
         .testimonial-card .client img {
             width: 48px;
             height: 48px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid rgba(255,255,255,0.1);
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
+
         .testimonial-card .client .name {
             font-weight: 600;
             font-size: 1rem;
         }
+
         .testimonial-card .client .role {
             font-size: 0.8rem;
             opacity: 0.6;
@@ -832,6 +1054,7 @@
             background: var(--gradient-mixed);
             color: white;
         }
+
         .cta-section .btn-light-custom {
             background: white;
             color: var(--primary);
@@ -840,11 +1063,12 @@
             border-radius: 50px;
             font-weight: 700;
             transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
+
         .cta-section .btn-light-custom:hover {
             transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
 
         /* ===== FOOTER ===== */
@@ -853,21 +1077,25 @@
             color: var(--gray-300);
             padding: 80px 0 40px;
         }
+
         .footer .footer-logo {
             display: flex;
             align-items: center;
             gap: 12px;
             margin-bottom: 16px;
         }
+
         .footer .footer-logo img {
             height: 45px;
             width: auto;
             border-radius: 6px;
             transition: var(--transition);
         }
+
         .footer .footer-logo img:hover {
             transform: scale(1.05) rotate(-2deg);
         }
+
         .footer .footer-logo .brand-text {
             font-family: 'Playfair Display', serif;
             font-weight: 900;
@@ -876,10 +1104,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .footer .footer-logo .brand-dot {
             color: var(--secondary);
             -webkit-text-fill-color: var(--secondary);
         }
+
         .footer h5 {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: white;
@@ -888,6 +1118,7 @@
             position: relative;
             display: inline-block;
         }
+
         .footer h5::after {
             content: '';
             position: absolute;
@@ -898,10 +1129,12 @@
             background: var(--gradient-secondary);
             border-radius: 10px;
         }
+
         .footer p {
             font-size: 0.95rem;
             line-height: 1.8;
         }
+
         .footer-links a {
             display: block;
             color: var(--gray-400);
@@ -909,35 +1142,40 @@
             transition: var(--transition);
             font-size: 0.95rem;
         }
+
         .footer-links a:hover {
             color: var(--secondary);
             padding-left: 8px;
         }
+
         .footer .social-icons a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255,255,255,0.06);
+            background: rgba(255, 255, 255, 0.06);
             border-radius: 50%;
             color: var(--gray-300);
             transition: var(--transition);
             margin-right: 8px;
         }
+
         .footer .social-icons a:hover {
             background: var(--secondary);
             color: var(--dark);
             transform: translateY(-4px);
         }
+
         .footer .copyright {
-            border-top: 1px solid rgba(255,255,255,0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
             padding-top: 24px;
             margin-top: 48px;
             text-align: center;
             font-size: 0.9rem;
             color: var(--gray-500);
         }
+
         .footer .copyright .brand-name {
             color: var(--secondary);
             font-weight: 700;
@@ -965,10 +1203,12 @@
             z-index: 999;
             cursor: pointer;
         }
+
         .back-to-top.active {
             opacity: 1;
             visibility: visible;
         }
+
         .back-to-top:hover {
             transform: translateY(-4px) scale(1.05);
             box-shadow: var(--shadow-lg);
@@ -976,36 +1216,105 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
-            .hero-title { font-size: 3.2rem; }
-            .section-title { font-size: 2.4rem; }
-            .floating-services { margin-top: 40px; }
-            .float-card { margin-bottom: 16px; }
-            .hero-stats { gap: 24px; flex-wrap: wrap; }
-            .about-badge { position: relative; bottom: 0; right: 0; margin-top: 16px; }
+            .hero-title {
+                font-size: 3.2rem;
+            }
+
+            .section-title {
+                font-size: 2.4rem;
+            }
+
+            .floating-services {
+                margin-top: 40px;
+            }
+
+            .float-card {
+                margin-bottom: 16px;
+            }
+
+            .hero-stats {
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+
+            .about-badge {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                margin-top: 16px;
+            }
         }
 
         @media (max-width: 768px) {
-            .hero { padding: 60px 0 60px; min-height: auto; }
-            .hero-title { font-size: 2.4rem; }
-            .section { padding: 60px 0; }
-            .section-title { font-size: 2rem; }
-            .top-bar .text-end { text-align: center !important; margin-top: 4px; }
-            .float-card { padding: 20px; }
-            .float-card .card-icon { width: 44px; height: 44px; font-size: 1.2rem; }
-            .navbar-brand .logo-img { height: 40px; }
-            .navbar-brand { font-size: 1.3rem; }
-            .footer .footer-logo img { height: 40px; }
-            .footer .footer-logo .brand-text { font-size: 1.3rem; }
+            .hero {
+                padding: 60px 0 60px;
+                min-height: auto;
+            }
+
+            .hero-title {
+                font-size: 2.4rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .top-bar .text-end {
+                text-align: center !important;
+                margin-top: 4px;
+            }
+
+            .float-card {
+                padding: 20px;
+            }
+
+            .float-card .card-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+
+            .navbar-brand .logo-img {
+                height: 40px;
+            }
+
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
+
+            .footer .footer-logo img {
+                height: 40px;
+            }
+
+            .footer .footer-logo .brand-text {
+                font-size: 1.3rem;
+            }
         }
 
         @media (max-width: 576px) {
-            .hero-title { font-size: 2rem; }
-            .hero-subtitle { font-size: 1rem; }
-            .hero-stat-number { font-size: 1.6rem; }
-            .service-card { padding: 28px 20px; }
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-stat-number {
+                font-size: 1.6rem;
+            }
+
+            .service-card {
+                padding: 28px 20px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- ===== PRELOADER ===== -->
@@ -1020,12 +1329,15 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <span><i class="fas fa-phone-alt me-2" style="color: var(--secondary);"></i> <a href="tel:+255753214045">0753 214 045</a></span>
+                    <span><i class="fas fa-phone-alt me-2" style="color: var(--secondary);"></i> <a
+                            href="tel:+255753214045">0753 214 045</a></span>
                     <span class="divider">|</span>
-                    <span><i class="fas fa-envelope me-2" style="color: var(--accent);"></i> <a href="mailto:info@zapreon.com">info@zapreon.com</a></span>
+                    <span><i class="fas fa-envelope me-2" style="color: var(--accent);"></i> <a
+                            href="mailto:info@zapreon.com">info@zapreon.com</a></span>
                 </div>
                 <div class="col-md-6 text-end">
-                    <span class="me-3"><i class="far fa-clock me-1" style="color: var(--gold);"></i> Mon - Sat: <span class="highlight-text">9AM - 6PM</span></span>
+                    <span class="me-3"><i class="far fa-clock me-1" style="color: var(--gold);"></i> Mon - Sat: <span
+                            class="highlight-text">9AM - 6PM</span></span>
                     <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
@@ -1055,41 +1367,64 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                            data-bs-toggle="dropdown">
                             Services
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item active" href="services.html"><i class="fas fa-th-large"></i> Overview</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="digital-printing.html"><i class="fas fa-print"></i> Digital Printing</a></li>
-                            <li><a class="dropdown-item" href="graphic-design.html"><i class="fas fa-palette"></i> Graphic Design</a></li>
-                            <li><a class="dropdown-item" href="multimedia.html"><i class="fas fa-video"></i> Multimedia Advertising</a></li>
-                            <li><a class="dropdown-item" href="digital-marketing.html"><i class="fas fa-chart-line"></i> Digital Marketing</a></li>
-                            <li><a class="dropdown-item" href="web-development.html"><i class="fas fa-code"></i> Web Development</a></li>
+                            <li><a class="dropdown-item active" href="services.html"><i class="fas fa-th-large"></i>
+                                    Overview</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="digital-printing.html"><i class="fas fa-print"></i>
+                                    Digital Printing</a></li>
+                            <li><a class="dropdown-item" href="graphic-design.html"><i class="fas fa-palette"></i>
+                                    Graphic Design</a></li>
+                            <li><a class="dropdown-item" href="multimedia.html"><i class="fas fa-video"></i> Multimedia
+                                    Advertising</a></li>
+                            <li><a class="dropdown-item" href="digital-marketing.html"><i class="fas fa-chart-line"></i>
+                                    Digital Marketing</a></li>
+                            <li><a class="dropdown-item" href="web-development.html"><i class="fas fa-code"></i> Web
+                                    Development</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button"
+                            data-bs-toggle="dropdown">
                             Portfolio
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="portfolio.html"><i class="fas fa-th-large"></i> Overview</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="printing-portfolio.html"><i class="fas fa-print"></i> Printing Projects</a></li>
-                            <li><a class="dropdown-item" href="design-portfolio.html"><i class="fas fa-paint-brush"></i> Design Projects</a></li>
-                            <li><a class="dropdown-item" href="multimedia-portfolio.html"><i class="fas fa-film"></i> Multimedia Projects</a></li>
+                            <li><a class="dropdown-item" href="portfolio.html"><i class="fas fa-th-large"></i>
+                                    Overview</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="printing-portfolio.html"><i class="fas fa-print"></i>
+                                    Printing Projects</a></li>
+                            <li><a class="dropdown-item" href="design-portfolio.html"><i class="fas fa-paint-brush"></i>
+                                    Design Projects</a></li>
+                            <li><a class="dropdown-item" href="multimedia-portfolio.html"><i class="fas fa-film"></i>
+                                    Multimedia Projects</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button"
+                            data-bs-toggle="dropdown">
                             Blog
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="blog.html"><i class="fas fa-th-large"></i> Overview</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="blog-design.html"><i class="fas fa-pencil-ruler"></i> Design Tips</a></li>
-                            <li><a class="dropdown-item" href="blog-marketing.html"><i class="fas fa-bullhorn"></i> Marketing Strategies</a></li>
-                            <li><a class="dropdown-item" href="blog-industry.html"><i class="fas fa-newspaper"></i> Industry News</a></li>
+                            <li><a class="dropdown-item" href="blog.html"><i class="fas fa-th-large"></i> Overview</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="blog-design.html"><i class="fas fa-pencil-ruler"></i>
+                                    Design Tips</a></li>
+                            <li><a class="dropdown-item" href="blog-marketing.html"><i class="fas fa-bullhorn"></i>
+                                    Marketing Strategies</a></li>
+                            <li><a class="dropdown-item" href="blog-industry.html"><i class="fas fa-newspaper"></i>
+                                    Industry News</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -1121,10 +1456,12 @@
                         4.7 ★ Google Reviews
                     </div>
                     <h1 class="hero-title">
-                        <span class="highlight-blue">Design</span> · <span class="highlight-orange">Print</span> · <span class="highlight-gold">Brand</span>
+                        <span class="highlight-blue">Design</span> · <span class="highlight-orange">Print</span> · <span
+                            class="highlight-gold">Brand</span>
                     </h1>
                     <p class="hero-subtitle">
-                        We bring your ideas to life with <span class="highlight">brilliant outcomes</span>. From design, print and multimedia 
+                        We bring your ideas to life with <span class="highlight">brilliant outcomes</span>. From design,
+                        print and multimedia
                         advertising to digital marketing solutions for businesses in Zanzibar and beyond.
                     </p>
                     <div class="d-flex flex-wrap gap-3">
@@ -1152,7 +1489,8 @@
                 </div>
 
                 <!-- Right Content - Floating Service Cards -->
-                <div class="col-lg-6 floating-services" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                <div class="col-lg-6 floating-services" data-aos="fade-left" data-aos-duration="800"
+                    data-aos-delay="200">
                     <div class="row g-3">
                         <!-- Card 1 - Digital Printing -->
                         <div class="col-sm-6">
@@ -1205,38 +1543,45 @@
     </section>
 
     <!-- ===== CLIENTS / LOGOS ===== -->
-    <section class="section-sm" style="background: white; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200);">
+    <section class="section-sm"
+        style="background: white; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200);">
         <div class="container">
             <div class="row align-items-center justify-content-center g-4" data-aos="fade-up">
                 <div class="col-6 col-md-3 col-lg-2 text-center">
-                    <img src="https://via.placeholder.com/150x50/1E3A8A/FFFFFF?text=Client+1" alt="Client" style="filter: grayscale(100%) opacity(0.5); transition: var(--transition); max-height: 50px;" 
-                         onmouseover="this.style.filter='grayscale(0%) opacity(1)'" 
-                         onmouseout="this.style.filter='grayscale(100%) opacity(0.5)'" />
+                    <img src="https://via.placeholder.com/150x50/1E3A8A/FFFFFF?text=Client+1" alt="Client"
+                        style="filter: grayscale(100%) opacity(0.5); transition: var(--transition); max-height: 50px;"
+                        onmouseover="this.style.filter='grayscale(0%) opacity(1)'"
+                        onmouseout="this.style.filter='grayscale(100%) opacity(0.5)'" />
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 text-center">
-                    <img src="https://via.placeholder.com/150x50/FF6B35/FFFFFF?text=Client+2" alt="Client" style="filter: grayscale(100%) opacity(0.5); transition: var(--transition); max-height: 50px;"
-                         onmouseover="this.style.filter='grayscale(0%) opacity(1)'" 
-                         onmouseout="this.style.filter='grayscale(100%) opacity(0.5)'" />
+                    <img src="https://via.placeholder.com/150x50/FF6B35/FFFFFF?text=Client+2" alt="Client"
+                        style="filter: grayscale(100%) opacity(0.5); transition: var(--transition); max-height: 50px;"
+                        onmouseover="this.style.filter='grayscale(0%) opacity(1)'"
+                        onmouseout="this.style.filter='grayscale(100%) opacity(0.5)'" />
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 text-center">
-                    <img src="https://via.placeholder.com/150x50/00D4AA/FFFFFF?text=Client+3" alt="Client" style="filter: grayscale(100%) opacity(0.5); transition: var(--transition); max-height: 50px;"
-                         onmouseover="this.style.filter='grayscale(0%) opacity(1)'" 
-                         onmouseout="this.style.filter='grayscale(100%) opacity(0.5)'" />
+                    <img src="https://via.placeholder.com/150x50/00D4AA/FFFFFF?text=Client+3" alt="Client"
+                        style="filter: grayscale(100%) opacity(0.5); transition: var(--transition); max-height: 50px;"
+                        onmouseover="this.style.filter='grayscale(0%) opacity(1)'"
+                        onmouseout="this.style.filter='grayscale(100%) opacity(0.5)'" />
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 text-center">
-                    <img src="https://via.placeholder.com/150x50/F59E0B/FFFFFF?text=Client+4" alt="Client" style="filter: grayscale(100%) opacity(0.5); transition: var(--transition); max-height: 50px;"
-                         onmouseover="this.style.filter='grayscale(0%) opacity(1)'" 
-                         onmouseout="this.style.filter='grayscale(100%) opacity(0.5)'" />
+                    <img src="https://via.placeholder.com/150x50/F59E0B/FFFFFF?text=Client+4" alt="Client"
+                        style="filter: grayscale(100%) opacity(0.5); transition: var(--transition); max-height: 50px;"
+                        onmouseover="this.style.filter='grayscale(0%) opacity(1)'"
+                        onmouseout="this.style.filter='grayscale(100%) opacity(0.5)'" />
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 text-center">
-                    <img src="https://via.placeholder.com/150x50/1E3A8A/FFFFFF?text=Client+5" alt="Client" style="filter: grayscale(100%) opacity(0.5); transition: var(--transition); max-height: 50px;"
-                         onmouseover="this.style.filter='grayscale(0%) opacity(1)'" 
-                         onmouseout="this.style.filter='grayscale(100%) opacity(0.5)'" />
+                    <img src="https://via.placeholder.com/150x50/1E3A8A/FFFFFF?text=Client+5" alt="Client"
+                        style="filter: grayscale(100%) opacity(0.5); transition: var(--transition); max-height: 50px;"
+                        onmouseover="this.style.filter='grayscale(0%) opacity(1)'"
+                        onmouseout="this.style.filter='grayscale(100%) opacity(0.5)'" />
                 </div>
                 <div class="col-6 col-md-3 col-lg-2 text-center">
-                    <img src="https://via.placeholder.com/150x50/00D4AA/FFFFFF?text=Client+6" alt="Client" style="filter: grayscale(100%) opacity(0.5); transition: var(--transition); max-height: 50px;"
-                         onmouseover="this.style.filter='grayscale(0%) opacity(1)'" 
-                         onmouseout="this.style.filter='grayscale(100%) opacity(0.5)'" />
+                    <img src="https://via.placeholder.com/150x50/00D4AA/FFFFFF?text=Client+6" alt="Client"
+                        style="filter: grayscale(100%) opacity(0.5); transition: var(--transition); max-height: 50px;"
+                        onmouseover="this.style.filter='grayscale(0%) opacity(1)'"
+                        onmouseout="this.style.filter='grayscale(100%) opacity(0.5)'" />
                 </div>
             </div>
         </div>
@@ -1248,8 +1593,8 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="about-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" 
-                             alt="About ZAPREON" class="main-img img-fluid" />
+                        <img src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
+                            alt="About ZAPREON" class="main-img img-fluid" />
                         <div class="about-badge">
                             <h3>4+</h3>
                             <p>Years Experience</p>
@@ -1258,15 +1603,19 @@
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <span class="section-badge">About Us</span>
-                    <h2 class="section-title">Delivering <span class="highlight">Brilliant</span> <br />Outcomes Since 2019</h2>
+                    <h2 class="section-title">Delivering <span class="highlight">Brilliant</span> <br />Outcomes Since
+                        2019</h2>
                     <p class="section-subtitle">
-                        Zan Present Vision (Smc – Private) L.T.D. is a Visual Communication company established in March 2019.
-                        Operating under its trademark and brand name ZAPREON is located at Kiembe Samaki, Nyerere Road, 
+                        Zan Present Vision (Smc – Private) L.T.D. is a Visual Communication company established in March
+                        2019.
+                        Operating under its trademark and brand name ZAPREON is located at Kiembe Samaki, Nyerere Road,
                         near Masjid Lootah.
                     </p>
                     <p class="text-muted">
-                        ZAPREON focuses on delivering the future of Digital convergence to small, medium and large businesses now, 
-                        in the present. With our brilliant minds and determined team, only one thing follows: <strong style="color: var(--secondary);">Brilliant Outcome!</strong>
+                        ZAPREON focuses on delivering the future of Digital convergence to small, medium and large
+                        businesses now,
+                        in the present. With our brilliant minds and determined team, only one thing follows: <strong
+                            style="color: var(--secondary);">Brilliant Outcome!</strong>
                     </p>
                     <div class="row g-3 mt-3">
                         <div class="col-sm-6">
@@ -1371,14 +1720,17 @@
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <span class="section-badge section-badge-accent">Testimonials</span>
-                <h2 class="section-title text-white">What Our <span style="color: var(--secondary);">Clients</span> Say</h2>
+                <h2 class="section-title text-white">What Our <span style="color: var(--secondary);">Clients</span> Say
+                </h2>
                 <p class="section-subtitle mx-auto">Don't just take our word for it</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="testimonial-card">
-                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="quote">"ZAPREON transformed our brand identity with their exceptional design skills. The attention to detail and professionalism was outstanding."</p>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="quote">"ZAPREON transformed our brand identity with their exceptional design skills.
+                            The attention to detail and professionalism was outstanding."</p>
                         <div class="client">
                             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" />
                             <div>
@@ -1390,8 +1742,10 @@
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="testimonial-card">
-                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="quote">"The digital marketing campaign by ZAPREON significantly increased our online visibility. Their team is creative, responsive, and results-driven."</p>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="quote">"The digital marketing campaign by ZAPREON significantly increased our online
+                            visibility. Their team is creative, responsive, and results-driven."</p>
                         <div class="client">
                             <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" />
                             <div>
@@ -1403,8 +1757,10 @@
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="testimonial-card">
-                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="quote">"From business cards to large format prints, ZAPREON delivers exceptional quality every time. Highly recommended for all printing needs."</p>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="quote">"From business cards to large format prints, ZAPREON delivers exceptional
+                            quality every time. Highly recommended for all printing needs."</p>
                         <div class="client">
                             <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Client" />
                             <div>
@@ -1423,8 +1779,10 @@
         <div class="container">
             <div class="row align-items-center g-4" data-aos="fade-up">
                 <div class="col-lg-8">
-                    <h3 class="mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif;">Ready to Get <span style="color: var(--secondary);">Started</span>?</h3>
-                    <p class="mb-0 opacity-75">Request a free quote and our team will get back to you within 24 hours.</p>
+                    <h3 class="mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif;">Ready to Get <span
+                            style="color: var(--secondary);">Started</span>?</h3>
+                    <p class="mb-0 opacity-75">Request a free quote and our team will get back to you within 24 hours.
+                    </p>
                 </div>
                 <div class="col-lg-4 text-lg-end">
                     <a href="quote.html" class="btn btn-light-custom">
@@ -1445,7 +1803,8 @@
                         <img src="logo/zapreon_logo.png" alt="ZAPREON Logo" />
                         <!-- <span class="brand-text">ZAPREON<span class="brand-dot">.</span></span> -->
                     </div>
-                    <p>Delivering the future of digital convergence to businesses in Zanzibar. From design, print and multimedia advertising with digital marketing experts.</p>
+                    <p>Delivering the future of digital convergence to businesses in Zanzibar. From design, print and
+                        multimedia advertising with digital marketing experts.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1477,7 +1836,8 @@
                 <div class="col-lg-3 col-md-6">
                     <h5>Contact Info</h5>
                     <div class="footer-links">
-                        <p><i class="fas fa-map-marker-alt me-2" style="color: var(--secondary);"></i> Kiembe Samaki, Zanzibar</p>
+                        <p><i class="fas fa-map-marker-alt me-2" style="color: var(--secondary);"></i> Kiembe Samaki,
+                            Zanzibar</p>
                         <p><i class="fas fa-phone me-2" style="color: var(--secondary);"></i> 0753 214 045</p>
                         <p><i class="fas fa-envelope me-2" style="color: var(--secondary);"></i> info@zapreon.com</p>
                         <p><i class="fas fa-clock me-2" style="color: var(--secondary);"></i> Mon - Sat: 9AM - 6PM</p>
@@ -1502,7 +1862,7 @@
     </script>
     <script>
         // ===== PRELOADER =====
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             document.getElementById('preloader').classList.add('hide');
         });
 
@@ -1515,7 +1875,7 @@
         });
 
         // ===== NAVBAR SCROLL =====
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
@@ -1532,13 +1892,13 @@
         });
 
         // ===== BACK TO TOP =====
-        document.getElementById('backToTop').addEventListener('click', function() {
+        document.getElementById('backToTop').addEventListener('click', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // ===== SMOOTH SCROLL =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href === '#') return;
                 e.preventDefault();
@@ -1550,4 +1910,5 @@
         });
     </script>
 </body>
+
 </html>
